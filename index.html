@@ -346,24 +346,6 @@
     .top-link:hover {
       color: var(--marigold);
     }
-    .download-pill {
-      background: rgba(212, 175, 55, 0.2);
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      color: #FFDF00;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.2s ease;
-    }
-    .download-pill:hover {
-      background: #D4AF37;
-      color: #1C110C;
-    }
 
     /* =========================================================
        STICKY NAVIGATION
@@ -2024,7 +2006,7 @@
 </head>
 <body>
 
-  <!-- TOP ANNOUNCEMENT BAR (TIMINGS, ADDRESS & INSTANT DOWNLOAD) -->
+  <!-- TOP ANNOUNCEMENT BAR (TIMINGS & ADDRESS) -->
   <div class="top-bar">
     <div class="wrap top-bar-inner">
       <div class="top-bar-left">
@@ -2042,10 +2024,10 @@
           <i class="fa-solid fa-phone" style="color:#4ADE80;"></i>
           <span>+91 90601 91459</span>
         </a>
-        <button class="download-pill" onclick="downloadSingleFileHtml()">
-          <i class="fa-solid fa-download"></i>
-          <span>Download index.html</span>
-        </button>
+        <a href="https://wa.me/919060191459" target="_blank" rel="noopener" class="top-link" style="color:#25D366;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Chat</span>
+        </a>
       </div>
     </div>
   </div>
@@ -3241,9 +3223,9 @@
             <a href="tel:+919060191459" class="btn btn-gold btn-sm">
               <i class="fa-solid fa-phone"></i> Call Shop
             </a>
-            <button onclick="downloadSingleFileHtml()" class="btn btn-outline-gold btn-sm">
-              <i class="fa-solid fa-download"></i> Save index.html
-            </button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shri+Bheruji+Fancy+Store+No+252+3+Kanakapura+Main+Rd+Vajarahalli+Bengaluru" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm">
+              <i class="fa-solid fa-location-arrow"></i> Get Directions
+            </a>
           </div>
         </div>
 
@@ -3367,7 +3349,7 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT: ANIMATIONS, FILTERS, DOWNLOAD & INTERACTIVITY -->
+  <!-- JAVASCRIPT: ANIMATIONS, FILTERS & INTERACTIVITY -->
   <script>
     // Set Year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -3524,20 +3506,6 @@
       if (!isOpen) {
         parent.classList.add('open');
       }
-    }
-
-    // One-Click Single File Download of Entire Website (index.html)
-    function downloadSingleFileHtml() {
-      const docHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-      const blob = new Blob([docHtml], { type: 'text/html;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'index.html';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
     }
   </script>
 </body>
